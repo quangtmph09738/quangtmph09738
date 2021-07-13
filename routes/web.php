@@ -37,10 +37,22 @@ Route::get('detail', function(){
 // =====================================================ADMIN==============================================
 Route::get('admin/users', function(){
     $list = DB::table('users')->get();
-    dd($list);
-    return view('adminapp.users.index');
+    // dd($list);
+    return view('adminapp.users.index',['users' => $list]);
 });
 Route::get('admin/', function(){
     return view('adminlayout');
 });
+Route::get('admin/users/add',function(){
+    return view('adminapp.users.add');
+});
+Route::post('admin/users/add',function(){
+    dd(__METHOD__);
+});
+
+
+
+
+
+// Route::view('/hello','layout');
 

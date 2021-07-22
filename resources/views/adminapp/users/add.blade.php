@@ -1,7 +1,8 @@
 @extends('layout')
 @section('content')
 @section('title','add user')
-<form method="POST" action="/admin/users/add">
+<form method="POST" action="{{route('admin.users.store')}}">
+  @csrf
   <div class="mb-3">
     <label for="" class="form-label">Tên</label>
     <input type="text" class="form-control" name="name" id="">

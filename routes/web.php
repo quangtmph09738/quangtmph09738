@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,23 +36,33 @@ Route::get('detail', function(){
 // match:: mapping url vowis callback tuowng uwngs theo phương thức khai baos  
 // any:: mapping vs callback tương uwngs  
 // =====================================================ADMIN==============================================
-Route::get('admin/users', function(){
-    $list = DB::table('users')->get();
-    // dd($list);
-    return view('adminapp.users.index',['users' => $list]);
-});
-Route::get('admin/', function(){
-    return view('adminlayout');
-});
-Route::get('admin/users/add',function(){
-    return view('adminapp.users.add');
-});
-Route::post('admin/users/add',function(){
-    dd(__METHOD__);
-});
 
 
-
+Route::group(
+    [
+        'prefix' => 'admin',
+        'as' => 'admin.',
+        'namespace' => 'Admin',
+    ], function (){
+        Route::group(
+            [
+                'prefix' => 'users',
+                'as' => 'users.'
+            ], function (){
+                Route::get('/', 'UserController@index')->name('index');
+            //add user
+                Route::get('add', 'UserController@create')->name('add');
+                Route::post('store', 'UserController@store')->name('store');
+                // edit user
+                Route::get('edit/{id}', 'UserController@edit')->name('edit');
+                Route::post('edit/{id}', 'UserController@update')->name('update');
+            }
+        );
+            
+            
+           
+    }
+);
 
 
 // Route::view('/hello','layout');

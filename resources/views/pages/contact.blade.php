@@ -29,38 +29,25 @@
                 <div class="col-md-4">
                   <div class="contact-infoormation">
                     <h5>
-                      Contact Info
+                      Thông tin liên hệ
                     </h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur ad ipis cing elit. Suspendisse at sapien mascsa. Lorem ipsum dolor sit amet, consectetur se adipiscing elit. Sed fermentum, sapien scele risque volutp at tempor, lacus est sodales massa, a hendrerit dolor slase turpis non mi. 
+                      
                     </p>
                     <ul>
                       <li>
-                        <span class="icon">
-                          <img src="images/message.png" alt="">
-                        </span>
                         <p>
-                          contact@michaeldesign.me
-                          <br>
-                          support@michaeldesign.me
+                          Địa chỉ email : tmqzuang24@gmail.com
                         </p>
                       </li>
                       <li>
-                        <span class="icon">
-                          <img src="images/phone.png" alt="">
-                        </span>
                         <p>
-                          084. 93 668 2236
-                          <br>
-                          084. 93 668 6789
+                          0867 543 248
                         </p>
                       </li>
                       <li>
-                        <span class="icon">
-                          <img src="images/address.png" alt="">
-                        </span>
                         <p>
-                          No.86 ChuaBoc St, DongDa Dt,
+                          Số 1 
                           <br>
                           Hanoi, Vietnam
                         </p>
@@ -73,7 +60,8 @@
                     <h5>
                       Contact Form
                     </h5>
-                    <form>
+                    <form action="{{ route('putcontact') }}" method="post">
+                      @csrf
                       <div class="row">
                         <div class="col-md-6">
                           <label>
@@ -82,7 +70,7 @@
                               *
                             </strong>
                           </label>
-                          <input class="inputfild" type="text" name="">
+                          <input class="inputfild" type="text" name="name">
                         </div>
                         <div class="col-md-6">
                           <label>
@@ -91,7 +79,18 @@
                               *
                             </strong>
                           </label>
-                          <input class="inputfild" type="email" name="">
+                          <input class="inputfild" type="email" name="email">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label>
+                            Your phone 
+                            <strong class="red">
+                              *
+                            </strong>
+                          </label>
+                          <input class="inputfild" type="text" name="phone">
                         </div>
                       </div>
                       <div class="row">
@@ -102,11 +101,11 @@
                               *
                             </strong>
                           </label>
-                          <textarea class="inputfild" rows="8" name="">
+                          <textarea class="inputfild" rows="8" name="message">
                           </textarea>
                         </div>
                       </div>
-                      <button class="pull-right">
+                      <button class="pull-right" type="submit" name="submit">
                         Send Message
                       </button>
                     </form>
@@ -116,102 +115,6 @@
             </div>
           </div>
           <div class="clearfix">
-          </div>
-          <div class="our-brand">
-            <h3 class="title">
-              <strong>
-                Our 
-              </strong>
-              Brands
-            </h3>
-            <div class="control">
-              <a id="prev_brand" class="prev" href="#">
-                &lt;
-              </a>
-              <a id="next_brand" class="next" href="#">
-                &gt;
-              </a>
-            </div>
-            <ul id="braldLogo">
-              <li>
-                <ul class="brand_item">
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/envato.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/themeforest.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/photodune.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/activeden.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/envato.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <ul class="brand_item">
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/envato.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/themeforest.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/photodune.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/activeden.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="brand-logo">
-                        <img src="images/envato.png" alt="">
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

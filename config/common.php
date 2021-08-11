@@ -8,7 +8,7 @@ return [
         ],
         'role' => [
             "user" => 1,
-            "admin" => 2,
+            "admin" => 0,
         ],
     ],
     'invoice' => [

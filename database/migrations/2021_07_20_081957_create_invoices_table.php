@@ -18,7 +18,7 @@ class CreateInvoicesTable extends Migration
             $table->bigInteger('user_id');
             $table->string('phone');
             $table->string('address');
-            $table->unsignedDouble('total_price');
+            $table->string('total_price');
             $table->integer('status')->default(config('common.invoice.status.cho_duyet'));
             $table->timestamps();
             // $table->foreign('user_id')->refe

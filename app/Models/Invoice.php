@@ -22,6 +22,12 @@ class Invoice extends Model
         return $this->hasMany(InvoiceDetail::class, 'invoice_id', 'id');
     }
     public function user(){
-        return $this->belongsTo(User::class, 'invoice_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    ////accsessor
+    // public function getTotalPriceAttribute($value){
+    //     $newValue = $this->attribute['total_price'].'VND';
+    //     return $newValue;
+    // }
 }
